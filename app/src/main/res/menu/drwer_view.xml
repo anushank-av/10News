@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/topNews"
+            android:title="All News"/>
+        <item android:id="@+id/national"
+            android:title="India"/>
+        <item android:id="@+id/world"
+            android:title="Global"/>
+        <item android:title="Business"
+            android:id="@+id/business"/>
+        <item android:title="Entertainment"
+            android:id="@+id/entertainment"/>
+        <item android:title="Technology"
+            android:id="@+id/technology"/>
+
+    </group>
+    <item android:id="@+id/otherOpt"
+        android:title="Options">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/settings"
+                    android:title="Settings"/>
+                <item android:id="@+id/about"
+                    android:title="About Us"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>
