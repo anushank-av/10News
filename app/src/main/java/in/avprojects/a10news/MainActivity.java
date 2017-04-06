@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         newsNav = (NavigationView)findViewById(R.id.nav_view);
         newsNav.setNavigationItemSelectedListener(this);
+        Fragment fragment = NewsFragment.getFragmentInstance("Top news",0);
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
+        setTitle("Home");
     }
 
     @Override
@@ -50,25 +53,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         try {
             switch (id) {
                 case R.id.topNews:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 case R.id.national:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 case R.id.world:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 case R.id.business:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment =NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 case R.id.entertainment:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 case R.id.technology:
-                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()));
+                    fragment = NewsFragment.getFragmentInstance(String.valueOf(item.getTitle()),0);
                     break;
                 default:
-                    fragment = NewsFragment.getFragmentInstance("Top News");
+                    fragment = NewsFragment.getFragmentInstance("Top News",0);
             }
         }catch (Exception e){e.printStackTrace();}
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
